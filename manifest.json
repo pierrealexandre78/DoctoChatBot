@@ -1,17 +1,21 @@
 {
- "manifest_version": 2, // Indique la version du manifest (toujours 2)
- "name": "DoctoChatBot", // Le nom de votre extension
- "description": "Chome-based ChatBot for Doctolib Users", // La description
- "version": "1.0", // La version en en l'occurrence la première donc 1.0
- "permissions": [ // Les permissions, on y reviendra plus bas
-  "http://*/*",
-  "https://*/*",
- ],
- "browser_action": {   // Les paramètres
-  "default_icon" : "img/icon.png", // L'icône qui s'affiche en haut à droite de votre navigateur
-  "default_popup": "popup.html" // Le popup qui s'affichera quand vous cliquez sur l'îcone
- },
- "icons": { // L'îcone qui s'affichera lorse que vous êtes sur la page extensions des paramètre
-  "128" : "img/icon_128.png" // 128 = 128x128 la taille de votre image
- }
+    "manifest_version": 2, 
+    "name": "DoctoChatBot",
+    "description": "Chatbot pour Doctolib en extension Chrome", 
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.doctolib.fr/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "ChatBot",
+        "default_icon": "img/doctolib.png"
+    }
 }
