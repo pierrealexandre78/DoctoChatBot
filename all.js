@@ -14,7 +14,8 @@ const textToSpeech = (string) => {
 
 // Options the user could type in
 const prompts = [
-    ["hi", "hey", "hello", "good morning", "good afternoon"],
+    //prompts[0] section mot de passe
+    ["Bonjour", "Salut", "Bienvenue", "Bonsoir"],
     ["how are you", "how is life", "how are things"],
     ["what are you doing", "what is going on", "what is up"],
     ["how old are you"],
@@ -44,7 +45,7 @@ const prompts = [
   // Possible responses, in corresponding order
   
   const replies = [
-    ["Hello!", "Hi!", "Hey!", "Hi there!","Howdy"],
+    ["Bonjour", "Salut", "Bienvenue", "Bonsoir"],
     [
       "Fine... how are you?",
       "Pretty well, how are you?",
@@ -88,6 +89,7 @@ const prompts = [
   // Whatever else you want :)
   
   const coronavirus = ["Please stay home", "Wear a mask", "Fortunately, I don't have COVID", "These are uncertain times"]
+  const mdp = ["vous pouver reinitialiser votre mot de passe: https://www.doctolib.fr/account/passwords/new"]
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -150,6 +152,7 @@ function addChat(input, product) {
     
     setTimeout(() => {
       botText.innerText = `${product}`;
+      //reponse instantanee en vocal
       //textToSpeech(product)
     }, 2000
     )
@@ -181,6 +184,10 @@ function output(input) {
     } else if (text.match(/(corona|covid|virus)/gi)) {
       // If no match, check if message contains `coronavirus`
       product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
+    }  
+      else if (text.match(/(motdepasse|mot de passe|mdp|m d p)/gi)) {
+      // If no match, check if message contains `mot de passe`
+      product = mdp[Math.floor(Math.random() * mdp.length)];
     } else {
       // If all else fails: random alternative
       product = alternative[Math.floor(Math.random() * alternative.length)];
