@@ -9,13 +9,22 @@
                 "https://www.doctolib.fr/*"
             ],
             "js": [
-                "content.js"
+                "constant.js",
+                "index.js",
+                "speech.js"
             ]
         }
     ],
     "browser_action": {
-        "default_popup": "popup.html",
+        "default_popup": "index.html",
         "default_title": "ChatBot",
         "default_icon": "img/doctolib.png"
+    },
+
+    "permissions": ["activeTab", "declarativeContent", "storage"],
+
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
     }
 }
