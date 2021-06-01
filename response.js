@@ -13,4 +13,8 @@ class Response {
     get_link(){
         return this.link;
     }
+
+    get_pictogram(){
+        return this.pictogram;
+    }
 }

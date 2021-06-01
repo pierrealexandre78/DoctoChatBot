@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.code === "Enter") {
         let input = inputField.value;
         inputField.value = "";
-        output(input);
+        keyword_to_response(input);
       }
     });
 });

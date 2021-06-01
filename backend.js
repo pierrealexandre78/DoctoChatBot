@@ -21,23 +21,12 @@ function compare(promptsArray, repliesArray, string) {
 }
 
 
-function output(input) {
+function keyword_to_response(input) {
     let product;
     let response;
-    // Regex remove non word/space chars
-    // Trim trailing whitespce
-    // Remove digits - not sure if this is best
-    // But solves problem of entering something like 'hi1'
   
     let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-    text = text
-      .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
-      .replace(/i feel /g, "")
-      .replace(/whats/g, "what is")
-      .replace(/please /g, "")
-      .replace(/ please/g, "")
-      .replace(/r u/g, "are you");
-  
+
     if (compare(prompts, replies, text)) { 
       // Search for exact match in `prompts`
       product = compare(prompts, replies, text);
@@ -50,8 +39,9 @@ function output(input) {
       else if (text.match(/(motdepasse|mot de passe|mdp|m d p)/gi)) {
       // If no match, check if message contains `mot de passe`
       product = mdp[Math.floor(Math.random() * mdp.length)];
+      response = new Response("Pour changer votre mot de passe :", "Logo-Cadenas.jpg", "https://www.doctolib.fr/account/passwords/new");
     } else if (text.match(/(pharmacie)/gi)) {
-      response = new Response("pharmacie", "Logo-Pharmacie.jpg", "https://www.doctolib.fr/pharmacie");
+      response = new Response("Pour trouver une pharmacie :", "Logo-Pharmacie.jpg", "https://www.doctolib.fr/pharmacie");
       product = response.get_text() + " " + response.get_link();
     }
      else {
@@ -60,5 +50,5 @@ function output(input) {
     }
   
     // Update DOM
-    addChat(input, product);
+    addBoxResponse(input, product, response);
 }
