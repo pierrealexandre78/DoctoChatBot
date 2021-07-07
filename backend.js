@@ -20,33 +20,37 @@ function compare(promptsArray, repliesArray, string) {
     return reply;
 }
 
+function keycompare(text, list) {
+    for (let i = 0; i < list.length; i++) {
+    let words = list[i].get_wordlist();
+        for (let j = 0; j < words.length; j++) {
+            if (text.match(words[j])) {
+              return list[i];
+            }
+        }
+    }
+    return null;
+
+}
 
 function keyword_to_response(input) {
     let product;
     let response;
-
-    let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+    let text = input.toLowerCase();
 
     if (compare(prompts, replies, text)) {
       // Search for exact match in `prompts`
       product = compare(prompts, replies, text);
-    } else if (text.match(/thank/gi)) {
-      product = "You're welcome!"
-    } else if (text.match(/(corona|covid|virus)/gi)) {
-      // If no match, check if message contains `coronavirus`
-      product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
+      response = new Response(product, "Logo-bonjour.jpg", "");
     }
-      else if (text.match(/(motdepasse|mot de passe|mdp|m d p)/gi)) {
-      // If no match, check if message contains `mot de passe`
-      product = mdp[Math.floor(Math.random() * mdp.length)];
-      response = new Response("Pour changer votre mot de passe :", "Logo-Cadenas.jpg", "https://www.doctolib.fr/account/passwords/new");
-    } else if (text.match(/(pharmacie)/gi)) {
-      response = new Response("Pour trouver une pharmacie :", "Logo-Pharmacie.jpg", "https://www.doctolib.fr/pharmacie");
-      product = response.get_text() + " " + response.get_link();
+    else if ((keyword = keycompare(input, list_of_keywords)) != null){
+      response = new Response(keyword.get_text(), keyword.get_pictogram(), keyword.get_link());
     }
-     else {
-      // If all else fails: random alternative
+
+    else {
+      // did not understand
       product = alternative[Math.floor(Math.random() * alternative.length)];
+      response = new Response(product, "Logo-incomprehension.jpg", "");
     }
 
     // Update DOM
