@@ -9,8 +9,7 @@
                 "https://www.doctolib.fr/*"
             ],
             "js": [
-                "all.js",
-                "content-script.js"
+                "content-scripts.js"
             ]
         }
     ],
