@@ -1,5 +1,4 @@
-class Response {
-    //ex : pharmacie, pharmacie.png, https://www.doctolib.fr/pharmacie
+class Response {    
     constructor(text, pictogram, link) {
         this.text = text;
         this.pictogram = pictogram;

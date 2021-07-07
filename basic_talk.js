@@ -12,8 +12,3 @@ const prompts = [
   const alternative = [
     "Pouvez vous reformuler",
   ]
-  
-  // keyword basic_answer
-  
-  const coronavirus = ["Please stay home", "Wear a mask", "Fortunately, I don't have COVID", "These are uncertain times"]
-  const mdp = ["vous pouver reinitialiser votre mot de passe: https://www.doctolib.fr/account/passwords/new"]
