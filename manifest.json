@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2, 
+    "manifest_version": 2,
     "name": "DoctoChatBot",
-    "description": "Chatbot pour Doctolib en extension Chrome", 
+    "description": "Chatbot pour Doctolib en extension Chrome",
     "version": "1.0",
     "content_scripts": [
         {
@@ -9,20 +9,13 @@
                 "https://www.doctolib.fr/*"
             ],
             "js": [
-                "backend.js"
+                "content-scripts.js"
             ]
         }
     ],
-    "browser_action": {
-        "default_popup": "index.html",
-        "default_title": "ChatBot",
-        "default_icon": "img/doctolib.png"
-    },
 
-    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "http://*/*"
+],
 
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": true
-    }
+    "content_security_policy": "script-src 'self' https://doctolib.fr; object-src 'self'"
 }
