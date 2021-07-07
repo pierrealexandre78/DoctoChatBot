@@ -3,6 +3,11 @@
     width: 500px;
 }
 
+#bot {
+    display: flex;
+    align-items: flex-start;
+}
+
 body { 
     color: #421; 
     font-weight: bold; 
