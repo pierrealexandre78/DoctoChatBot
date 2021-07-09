@@ -42,7 +42,7 @@ $(function() {
         str += "            <img src=\"img\/doctolib.png\">";
         str += "          <\/span>";
         str += "          <div class=\"cm-msg-text\">";
-        str += msg;
+        str += keyword_to_response(msg).get_text();
     }
     str += "          <\/div>";
     str += "        <\/div>";

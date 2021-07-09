@@ -36,10 +36,10 @@ function keycompare(text, list) {
 function keyword_to_response(input) {
     let product;
     let response;
-  
+
     let text = input.toLowerCase();
 
-    if (compare(prompts, replies, text)) { 
+    if (compare(prompts, replies, text)) {
       // Search for exact match in `prompts`
       product = compare(prompts, replies, text);
       response = new Response(product, "Logo-bonjour.jpg", "");
@@ -49,11 +49,10 @@ function keyword_to_response(input) {
     }
 
     else {
-      // did not understand  
+      // did not understand
       product = alternative[Math.floor(Math.random() * alternative.length)];
       response = new Response(product, "Logo-incomprehension.jpg", "");
     }
-  
-    // Update DOM
-    addBoxResponse(input, product, response);
+
+    return response;
 }
