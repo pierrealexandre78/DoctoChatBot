@@ -42,7 +42,15 @@ $(function() {
         str += "            <img src=\"img\/doctolib.png\">";
         str += "          <\/span>";
         str += "          <div class=\"cm-msg-text\">";
-        str += keyword_to_response(msg).get_text();
+        // str += "<a href=\"https://www.doctolib.fr/\naccount/passwords/new\"> https://www.doctolib.fr/\naccount/passwords/new";
+
+        response = keyword_to_response(msg);
+
+        if (response.get_text())
+            str += response.get_text();
+
+        if (response.get_link())
+            str += response.get_link();
     }
     str += "          <\/div>";
     str += "        <\/div>";
