@@ -26,8 +26,8 @@ $(function() {
     function addNewlines(str) {
         var result = '';
         while (str.length > 0) {
-            result += str.substring(0, 36) + '\n';
-            str = str.substring(36);
+            result += str.substring(0, 26) + '\n';
+            str = str.substring(26);
         }
         return result;
     }
