@@ -1,3 +1,4 @@
+// Open chatbot popup on click
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('button').addEventListener('click', onclick_window_popup, false)
 

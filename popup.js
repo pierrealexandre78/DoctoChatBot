@@ -1,12 +1,18 @@
 $(function() {
     var INDEX = 0;
+
     $("#chat-submit").click(function(e) {
         e.preventDefault();
+
+        // get user message
         var msg = $("#chat-input").val();
-        if(msg.trim() == ''){
+
+        if (msg.trim() == ''){
             return false;
         }
+
         generate_message(msg, 'self');
+
         var buttons = [
             {
                 name: 'Existing User',
@@ -17,21 +23,27 @@ $(function() {
                 value: 'new'
             }
         ];
+
+        // timer for human like response
         setTimeout(function() {
             generate_message(msg, 'user');
         }, 1000)
 
     })
 
+    // Add new lines every 26 characters for text box
     function addNewlines(str) {
         var result = '';
+
         while (str.length > 0) {
             result += str.substring(0, 26) + '\n';
             str = str.substring(26);
         }
+
         return result;
     }
 
+    // get message from user and send bot response
     function generate_message(msg, type) {
         INDEX++;
         var str="";
@@ -62,20 +74,26 @@ $(function() {
             if (response.get_link())
                 str += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"" + addNewlines(response.get_link()) + "\">" + addNewlines(response.get_link()) + "";
         }
+
         str += "          <\/div>";
         str += "        <\/div>";
+
         $(".chat-logs").append(str);
-        $("#cm-msg-"+INDEX).hide().fadeIn(300);
+        $("#cm-msg-" + INDEX).hide().fadeIn(300);
+
         if(type == 'self'){
             $("#chat-input").val('');
         }
+
         $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
     }
 
     $(document).delegate(".chat-btn", "click", function() {
         var value = $(this).attr("chat-value");
         var name = $(this).html();
+
         $("#chat-input").attr("disabled", false);
+
         generate_message(name, 'self');
     })
 
