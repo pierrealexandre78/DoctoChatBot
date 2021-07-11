@@ -20,6 +20,9 @@ function compare(promptsArray, repliesArray, string) {
     return reply;
 }
 
+//compare keywords and return the good keyword object in the List
+//param text is a string where a keyword is inside or not
+//list is the list of keywords objects that might be in the text
 function keycompare(text, list) {
     for (let i = 0; i < list.length; i++) {
     let words = list[i].get_wordlist();
@@ -33,6 +36,8 @@ function keycompare(text, list) {
 
 }
 
+//the function returns an object response to be used by the front-end
+//param input is the string input from user
 function keyword_to_response(input) {
     let product;
     let response;
