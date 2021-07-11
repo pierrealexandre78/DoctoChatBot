@@ -33,7 +33,7 @@ class KeyWord {
 // The keywords that are processed by the chatbot
 const pharmacie_k = new KeyWord(["pharmacie", "pharmaci", "farmacie"], "Pour trouver une pharmacie :", "Logo-Pharmacie.jpg", "https://www.doctolib.fr/pharmacie");
 const mdp_k = new KeyWord(["motdepasse", "mot de passe", "mdp", "m d p"], "Pour changer votre mot de passe :", "Logo-Cadenas.jpg", "https://www.doctolib.fr/account/passwords/new");
-const covid_k = new KeyWord(["covid", "corona", "coronavirus", "corona virus", "covid19", "covid 19", "vaccination", "vaccin"],"Vous pouvez chercher un creneau pour vous faire vacciner ici :", "Logo-Corona.jpg", "https://www.doctolib.fr/vaccination-covid-19/paris")
+const covid_k = new KeyWord(["covid", "corona", "coronavirus", "corona virus", "covid19", "covid 19", "vaccination", "vaccin"],"Vous pouvez chercher un creneau pour vous faire vacciner ici :", "Logo-Coronavirus.jpg", "https://www.doctolib.fr/vaccination-covid-19/paris")
 const medecin_k = new KeyWord(["médecin", "medecin", "docteur", "doc", "toubib"], "Pour chercher un médecin généraliste :", "Logo-Docteur.png", "https://www.doctolib.fr/medecin-generaliste")
 
 //global list of keywords
