@@ -3,24 +3,6 @@
     "name": "DoctoChatBot",
     "description": "Chatbot pour Doctolib en extension Chrome",
     "version": "1.0",
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.doctolib.fr/*"
-            ],
-            "js": [
-                "backend.js",
-                "background.js",
-                "content.js",
-                "keyword.js",
-                "listener.js",
-                "open-popup.js",
-                "popup.js",
-                "response.js",
-                "speech.js"
-            ]
-        }
-    ],
     "browser_action": {
         "default_popup": "index.html",
         "default_title": "ChatBot",
