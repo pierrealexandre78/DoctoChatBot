@@ -9,7 +9,7 @@
                 "https://www.doctolib.fr/*"
             ],
             "js": [
-                "content.js"
+                "open-popup.js"
             ]
         }
     ],
@@ -19,10 +19,10 @@
         "default_icon": "img/doctolib.png"
     },
 
-    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
 
     "background": {
-        "scripts": ["content.js"],
+        "scripts": ["background.js"],
         "persistent": true
     }
 }
