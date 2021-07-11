@@ -10,5 +10,5 @@ const prompts = [
   
   // Random for any other user input 
   const alternative = [
-    "Pouvez vous reformuler",
+    "Pouvez vous reformuler ?",
   ]
