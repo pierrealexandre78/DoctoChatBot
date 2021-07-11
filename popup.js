@@ -43,7 +43,7 @@ $(function() {
             str += "            <img src=\"img\/avatar.png\">";
             str += "          <\/span>";
             str += "          <div class=\"cm-msg-text\">";
-            str += msg;
+            str += addNewlines(msg);
         }
 
         // Bot
