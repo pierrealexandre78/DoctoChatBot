@@ -214,3 +214,7 @@ html, body {
     clear: both;
     margin-bottom: 70px;
 }
+
+a:hover {
+  background-color: yellow;
+}
