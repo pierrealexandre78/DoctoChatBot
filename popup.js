@@ -60,7 +60,7 @@ $(function() {
                 str += addNewlines(response.get_text());
 
             if (response.get_link())
-                str += "<a href=\"" + addNewlines(response.get_link()) + "\">" + addNewlines(response.get_link()) + "";
+                str += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"" + addNewlines(response.get_link()) + "\">" + addNewlines(response.get_link()) + "";
         }
         str += "          <\/div>";
         str += "        <\/div>";
