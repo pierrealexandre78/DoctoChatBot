@@ -34,6 +34,7 @@ html, body {
     padding-left: 40px;
     color: #5865C3;
 }
+
 #chat-overlay {
     background: rgba(255,255,255,0.1);
     position: absolute;
@@ -44,7 +45,6 @@ html, body {
     border-radius: 50%;
     display: none;
 }
-
 
 .chat-box {
   display:none;
@@ -110,6 +110,7 @@ html, body {
   border-bottom-right-radius:5px;
   border-bottom-left-radius:5px;
   overflow:hidden;
+  font-size: large;
 }
 .chat-input > form {
     margin-bottom: 0;
@@ -142,6 +143,7 @@ html, body {
   padding:15px;
   height:370px;
   overflow-y:scroll;
+  font-size: large;
 }
 
 .chat-logs::-webkit-scrollbar-track
